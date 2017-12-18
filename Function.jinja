@@ -1,0 +1,17 @@
+resources:
+- name: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
+  type: cloudfunctions.v1beta2.function
+  properties:
+    name: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
+    location: us-central1
+    function: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
+    entryPoint: {{ env["name"] }}
+    timeout: 45.0s
+    availableMemoryMb: 128
+    sourceRepository:
+      repositoryUrl: {{ properties["googlerepo"] }}
+      sourcePath: /
+      branch: {{ properties["branch"] }}
+    httpsTrigger:
+      url: butthole-test
+      resources:

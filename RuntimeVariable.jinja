@@ -1,0 +1,7 @@
+resources:
+- name: {{ env["name"] }}
+  type: runtimeconfig.v1beta1.variable
+  properties:
+    parent: $(ref.environmental-variables-config.name)
+    variable: firebaseURL
+    text: {{ properties["value"] }}

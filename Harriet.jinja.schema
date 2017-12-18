@@ -1,0 +1,23 @@
+info:
+  title: Harriet Template
+  author: IamGoodBad
+  description: Creates a collection of microservices known collectively as Harriet.
+  version: 0.1
+
+imports:
+  - path: Function.jinja
+  - path: RuntimeConfiguration.jinja
+  - path: RuntimeVariable.jinja
+
+required:
+  - stripeSecret
+  - environment
+  
+properties:
+  stripeSecret:
+    type: string
+    description: Stripe Secret Key.
+
+  environment:
+    type: string
+    description: Environment.

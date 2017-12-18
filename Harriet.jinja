@@ -1,0 +1,14 @@
+resources:
+- name: environmental-variables-config
+  type: RuntimeConfiguration.jinja
+- name: stripeKey
+  type: RuntimeVariable.jinja
+  properties:
+    value: {{ properties["stripeSecret"] }}
+- name: getCustomer
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    googlerepo: https://source.developers.google.com/p/{{ env["project"] }}/r/newtest
+    branch: master
+
