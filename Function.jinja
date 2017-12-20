@@ -9,7 +9,7 @@ resources:
     timeout: 45.0s
     availableMemoryMb: 128
     sourceRepository:
-      repositoryUrl: {{ properties["googlerepo"] }}
+      repositoryUrl: https://source.developers.google.com/p/{{ env["project"] }}/r/{{ env["name"] }}
       sourcePath: /
       branch: {{ properties["branch"] }}
     httpsTrigger:

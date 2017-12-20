@@ -1,5 +1,5 @@
 resources:
-- name: environmental-variables-config
+- name: environmental-variables
   type: RuntimeConfiguration.jinja
 - name: stripeKey
   type: RuntimeVariable.jinja
@@ -9,6 +9,44 @@ resources:
   type: Function.jinja
   properties:
     environment: {{ properties["environment"] }}
-    googlerepo: https://source.developers.google.com/p/{{ env["project"] }}/r/newtest
     branch: master
-
+- name: addSource
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: createOrder
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: payOrder
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: updateEmail
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: updatePrimarySource
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: updateShipping
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: stripeWebhookCreateOrder
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
+- name: stripeWebhookPaidOrder
+  type: Function.jinja
+  properties:
+    environment: {{ properties["environment"] }}
+    branch: master
