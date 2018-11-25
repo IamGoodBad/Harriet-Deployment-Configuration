@@ -1,52 +1,82 @@
 resources:
-- name: environmental-variables
-  type: RuntimeConfiguration.jinja
-- name: stripeKey
-  type: RuntimeVariable.jinja
-  properties:
-    value: {{ properties["stripeSecret"] }}
-- name: getCustomer
+- name: Harriet-Get-Customer
   type: Function.jinja
   properties:
+    functionName: getCustomer
     environment: {{ properties["environment"] }}
     branch: master
-- name: addSource
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Add-Source
   type: Function.jinja
   properties:
+    functionName: addSource
     environment: {{ properties["environment"] }}
     branch: master
-- name: createOrder
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Create-Order
   type: Function.jinja
   properties:
+    functionName: createOrder
     environment: {{ properties["environment"] }}
     branch: master
-- name: payOrder
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Pay-Order
   type: Function.jinja
   properties:
+    functionName: payOrder
     environment: {{ properties["environment"] }}
     branch: master
-- name: updateEmail
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Update-Email
   type: Function.jinja
   properties:
+    functionName: updateEmail
     environment: {{ properties["environment"] }}
     branch: master
-- name: updatePrimarySource
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Update-Primary-Source
   type: Function.jinja
   properties:
+    functionName: updatePrimarySource
     environment: {{ properties["environment"] }}
     branch: master
-- name: updateShipping
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Update-Shipping
   type: Function.jinja
   properties:
+    functionName: updateShipping
     environment: {{ properties["environment"] }}
     branch: master
-- name: stripeWebhookCreateOrder
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Stripe-Webhook-Create-Order
   type: Function.jinja
   properties:
+    functionName: stripeWebhookCreateOrder
     environment: {{ properties["environment"] }}
     branch: master
-- name: stripeWebhookPaidOrder
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}
+- name: Harriet-Stripe-Webhook-Paid-Order
   type: Function.jinja
   properties:
+    functionName: stripeWebhookPaidOrder
     environment: {{ properties["environment"] }}
     branch: master
+    organization: {{ properties["organization"] }}
+    cryptoPath: {{ properties["cryptoPath"] }}
+    configurationPath: {{ properties["configurationPath"]}}

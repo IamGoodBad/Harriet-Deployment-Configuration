@@ -1,15 +1,18 @@
 resources:
-- name: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
+- name: {{ env["name"] }}-{{ properties["environment"] }}
   type: cloudfunctions.v1beta2.function
   properties:
-    name: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
+    name: {{ env["name"] }}-{{ properties["environment"] }}
     location: us-central1
-    function: {{ env["deployment"] }}-{{ env["name"] }}-{{ properties["environment"] }}
-    entryPoint: {{ env["name"] }}
+    function: {{ properties["functionName"] }}-{{ properties["environment"] }}
+    entryPoint: {{ properties["functionName"] }}
     timeout: 45.0s
     availableMemoryMb: 128
+    environmentVariables: 
+      cryptoPath: {{ properties["cryptoPath"] }}
+      configurationPath: {{ properties["configurationPath"]}}
     sourceRepository:
-      repositoryUrl: https://source.developers.google.com/p/{{ env["project"] }}/r/{{ env["name"] }}
+      repositoryUrl: https://source.developers.google.com/p/{{ env["project"] }}/r/github_{{ properties["organization"] }}_{{ env["name"] }}
       sourcePath: /
       branch: {{ properties["branch"] }}
     httpsTrigger:
